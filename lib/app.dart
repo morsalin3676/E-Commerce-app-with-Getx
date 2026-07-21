@@ -1,0 +1,27 @@
+import 'package:e_commerce1/presentation/ui/screens/auth/sing_up_screen.dart';
+import 'package:e_commerce1/presentation/ui/screens/spalash_screen.dart';
+import 'package:e_commerce1/presentation/ui/theme/theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      designSize: const Size(390, 844),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          home: child,
+        );
+      },
+      child:  SplashScreen(),
+    );
+  }
+}
